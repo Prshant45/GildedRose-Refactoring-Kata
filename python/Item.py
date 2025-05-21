@@ -1,9 +1,9 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 class Item(BaseModel):
     name: str
     sell_in: int
-    quality: int
+    quality: int = Field(..., ge=0, le=80) 
 
 
     def __repr__(self):
