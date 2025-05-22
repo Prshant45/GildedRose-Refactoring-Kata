@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from .Item import Item
+from Item import Item
 
 class ItemUpdater(ABC):
     @abstractmethod
@@ -30,6 +30,9 @@ class BackstagePassUpdater(ItemUpdater):
         else:
             item.quality = min(50, item.quality + 1)
 
+class SulfurasUpdater(ItemUpdater):
+    def update(self, item):
+        pass
 
 class ConjuredItemUpdater(ItemUpdater):
     def update(self, item: Item):
